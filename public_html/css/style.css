@@ -1,0 +1,41 @@
+.right_column
+{
+    float:right;
+    width:160px;
+}
+
+.left_column
+{
+    margin-right:170px;
+}
+
+.main_content
+{
+	width:900px;
+	margin:auto
+}
+
+ul
+{
+    list-style-type:none;
+    background-color:darkblue;
+    margin-bottom:15px;
+}
+
+li
+{
+    display:inline-block;
+}
+
+a
+{
+    display:inline-block;
+    text-decoration:none;
+    padding:5px;
+    color:skyblue;
+}
+
+a:hover
+{
+     color:green;
+}
