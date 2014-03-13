@@ -16,11 +16,20 @@
 	margin:auto;
 }
 
+p
+{
+	font-size:40px;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	color:green;
+}
+
 ul
 {
     list-style-type:none;
     background-color:darkblue;
-    margin-bottom:15px;
+    margin:0;
+	padding:0;
+	text-align: center;
 }
 
 li
@@ -32,11 +41,19 @@ a
 {
     display:inline-block;
     text-decoration:none;
-    padding:5px;
+    padding:15px;
     color:skyblue;
 }
 
 a:hover
 {
      color:green;
+}
+
+#logo
+{
+	display:block;
+    margin-left:auto;
+    margin-right:auto;
+	padding-bottom:10px;
 }
