@@ -15,10 +15,10 @@ if(isset($_POST['submitted']))
 <head>
     <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
     <title>Heunjeok | Sign Up</title>
-    <link rel="STYLESHEET" type="text/css" href="style/fg_membersite.css" />
-    <script type='text/javascript' src='scripts/gen_validatorv31.js'></script>
-    <link rel="STYLESHEET" type="text/css" href="style/pwdwidget.css" />
-    <script src="scripts/pwdwidget.js" type="text/javascript"></script>      
+    <link rel="STYLESHEET" type="text/css" href="css/fg_membersite.css" />
+    <script type='text/javascript' src='js/gen_validatorv31.js'></script>
+    <link rel="STYLESHEET" type="text/css" href="css/pwdwidget.css" />
+    <script src="js/pwdwidget.js" type="text/javascript"></script>      
 </head>
 <body>
 
