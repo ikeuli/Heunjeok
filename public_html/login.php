@@ -14,13 +14,30 @@ if(isset($_POST['submitted']))
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 <head>
       <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
-      <title>Login</title>
-      <link rel="STYLESHEET" type="text/css" href="style/fg_membersite.css" />
+      <title>Heunjeok | Login</title>
+      <link rel="STYLESHEET" type="text/css" href="css/fg_membersite.css" />
       <script type='text/javascript' src='js/gen_validatorv31.js'></script>
+	  <link rel="stylesheet" type="text/css" href="/css/style.css" />
 </head>
-<body>
+<body background="/assets/images/background.jpg">
+	<img src="/assets/images/heunjeok.png" id="logo" alt="Heunjeok logo">
+	<ul id="nav_container">
+		<li>
+			<a href="index.html">Home</a>
+		</li>
+		<li>
+			<a href="register.php">Sign Up</a>
+		</li>
+		<li>
+			<a href="login.php">Log In</a>
+		</li>
+		<li>
+			<a href="contact.html">Contact</a>
+		</li>
+	</ul>
 
 <!-- Form Code Start -->
+<div id="main_content" align="center">
 <div id='fg_membersite'>
 <form id='login' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
 <fieldset >
@@ -50,6 +67,8 @@ if(isset($_POST['submitted']))
 </form>
 <!-- client-side Form Validations:
 Uses the excellent form validation script from JavaScript-coder.com-->
+
+<img src="/assets/images/dollarswon.png" alt="Dollar and won sign">
 
 <script type='text/javascript'>
 // <![CDATA[

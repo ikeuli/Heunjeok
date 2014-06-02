@@ -31,7 +31,7 @@ if(isset($_POST['submitted']))
 			<a href="register.php">Sign Up</a>
 		</li>
 		<li>
-			<a href="login.html">Log In</a>
+			<a href="login.php">Log In</a>
 		</li>
 		<li>
 			<a href="contact.html">Contact</a>
