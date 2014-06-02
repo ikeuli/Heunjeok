@@ -21,7 +21,7 @@ if(isset($_POST['submitted']))
     <script src="js/pwdwidget.js" type="text/javascript"></script>  
 	<link rel="stylesheet" type="text/css" href="/css/style.css" />
 </head>
-<body background="http://huntsy.com/assets/blue_thatch.png">
+<body background="/assets/images/background.jpg">
 	<img src="/assets/images/heunjeok.png" id="logo" alt="Heunjeok logo">
 	<ul id="nav_container">
 		<li>
