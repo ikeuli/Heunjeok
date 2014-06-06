@@ -1,3 +1,5 @@
 [17-Mar-2014 09:34:52 America/New_York] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'prasanth'@'localhost' (using password: YES) in /home/heuncxep/public_html/include/fg_membersite.php on line 733
 [17-Mar-2014 10:36:09 America/New_York] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'prasanth'@'localhost' (using password: YES) in /home/heuncxep/public_html/include/fg_membersite.php on line 733
 [17-Mar-2014 19:59:18 America/New_York] PHP Warning:  mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'prasanth'@'localhost' (using password: YES) in /home/heuncxep/public_html/include/fg_membersite.php on line 733
+[06-Jun-2014 09:01:00 America/New_York] PHP Parse error:  syntax error, unexpected T_STRING in /home/heuncxep/public_html/tracker.php on line 7
+[06-Jun-2014 09:02:56 America/New_York] PHP Parse error:  syntax error, unexpected T_STRING in /home/heuncxep/public_html/tracker.php on line 7

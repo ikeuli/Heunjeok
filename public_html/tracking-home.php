@@ -33,7 +33,7 @@ if(!$fgmembersite->CheckLogin())
         <div id="main_content" align="center">
 			<p>Choose a label or short description for the spending category then input how much money you spent.</p>
 			<div id='fg_membersite'>
-			<form id='tracker_input' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
+			<form id='tracker_input' action='tracker.php' method='post' accept-charset='UTF-8'>
 				<fieldset >
 				<legend>Track your spending</legend>
 				<input type='hidden' name='submitted' id='submitted' value='1'/>
@@ -45,7 +45,7 @@ if(!$fgmembersite->CheckLogin())
 				</div>
 				<div class='container'>
 					<label for='amount_spent' >Amount:</label><br/>
-					<input type='text' name='amount_spent' id='amount_spent' maxlength="13" autocomplete="off"/></br>
+					<input type='text' name='amount_spent' id='amount_spent' maxlength="20" autocomplete="off"/></br>
 					<span id='tracker_input_amount_spent_errorloc' class='error'></span>
 				</div>
 				<div class='container'>
