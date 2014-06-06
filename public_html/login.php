@@ -66,10 +66,9 @@ if(isset($_POST['submitted']))
 <div class='short_explanation'><a href='reset-pwd-req.php'>Forgot Password?</a></div>
 </fieldset>
 </form>
+<img src="/assets/images/dollarswon.png" alt="Dollar and won sign">
 <!-- client-side Form Validations:
 Uses the excellent form validation script from JavaScript-coder.com-->
-
-<img src="/assets/images/dollarswon.png" alt="Dollar and won sign">
 
 <script type='text/javascript'>
 // <![CDATA[
