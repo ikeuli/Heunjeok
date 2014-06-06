@@ -36,16 +36,17 @@ if(!$fgmembersite->CheckLogin())
 			<form id='tracker_input' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
 				<fieldset >
 				<legend>Track your spending</legend>
+				<input type='hidden' name='submitted' id='submitted' value='1'/>
 				<div><span class='error'><?php echo $fgmembersite->GetErrorMessage(); ?></span></div>
 				<div class='container'>
 					<label for='spending_category' >Category:</label><br/>
-					<input type='text' name='spending_category' id='spending_category' maxlength="50"/></br>
-					<span id='spending_category_errorloc' class='error'></span>
+					<input type='text' name='spending_category' id='spending_category' maxlength="50" autocomplete="off"/></br>
+					<span id='tracker_input_spending_category_errorloc' class='error'></span>
 				</div>
 				<div class='container'>
 					<label for='amount_spent' >Amount:</label><br/>
-					<input type='text' name='amount_spent' id='amount_spent' maxlength="13"/></br>
-					<span id='amount_spent_errorloc' class='error'></span>
+					<input type='text' name='amount_spent' id='amount_spent' maxlength="13" autocomplete="off"/></br>
+					<span id='tracker_input_amount_spent_errorloc' class='error'></span>
 				</div>
 				<div class='container'>
 					<input type='submit' name='Submit' value='Submit' />
@@ -63,7 +64,9 @@ if(!$fgmembersite->CheckLogin())
 
 				frmvalidator.addValidation("spending_category","req","Please provide a name for this payment.");
     
-				frmvalidator.addValidation("amount_spent","num","Please provide the amount of money spent.");
+				frmvalidator.addValidation("amount_spent","req","Please provide the amount of money spent.");
+				
+				frmvalidator.addValidation("amount_spent","num","Please provide a number amount.");
 
 				// ]]>
 			</script>
