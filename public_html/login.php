@@ -67,6 +67,19 @@ if(isset($_POST['submitted']))
 </fieldset>
 </form>
 <img src="/assets/images/dollarswon.png" alt="Dollar and won sign">
+
+<?PHP
+
+	require_once("./include/session_start.php");
+
+	if (isset($_POST['Submit'])) { 
+		$_SESSION['username'] = $_POST['username'];
+	} 
+	else {
+		$_SESSION['username'] = "fail";
+	}
+	
+?>
 <!-- client-side Form Validations:
 Uses the excellent form validation script from JavaScript-coder.com-->
 
