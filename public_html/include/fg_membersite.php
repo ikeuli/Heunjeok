@@ -142,6 +142,7 @@ class FGMembersite
         }
         
         $_SESSION[$this->GetLoginSessionVar()] = $username;
+		$_SESSION[username] = $username;
         
         return true;
     }
