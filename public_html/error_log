@@ -36,3 +36,5 @@
 [12-Jun-2014 11:44:12 America/New_York] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/heuncxep/public_html/tracker.php:12) in /home/heuncxep/public_html/include/fg_membersite.php on line 303
 [12-Jun-2014 11:45:03 America/New_York] PHP Fatal error:  Call to a member function RedirectToURL() on a non-object in /home/heuncxep/public_html/tracker.php on line 13
 [12-Jun-2014 12:05:09 America/New_York] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/heuncxep/public_html/tracker.php on line 18
+[12-Jun-2014 22:59:26 America/New_York] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/heuncxep/public_html/tracker.php on line 26
+[12-Jun-2014 22:59:50 America/New_York] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/heuncxep/public_html/tracker.php on line 26
