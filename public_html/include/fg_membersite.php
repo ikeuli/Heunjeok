@@ -67,6 +67,19 @@ class FGMembersite
     }
     
     //-------Main Operations ----------------------
+    function getMonthlyTotal ()
+	{
+		$mt = 0;
+	
+		if(!$this->DBLogin())
+        {
+            $this->HandleError("Database login failed!");
+            return "error";
+        }      
+
+		
+	}
+	
     function RegisterUser()
     {
         if(!isset($_POST['submitted']))
