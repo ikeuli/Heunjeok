@@ -20,6 +20,7 @@ http://www.html-form-guide.com/php-form/php-login-form.html
 */
 require_once("class.phpmailer.php");
 require_once("formvalidator.php");
+date_default_timezone_set('Asia/Seoul');
 
 class FGMembersite
 {
@@ -70,6 +71,7 @@ class FGMembersite
     function getMonthlyTotal ()
 	{
 		$mt = 0;
+		$month = date(m);
 	
 		if(!$this->DBLogin())
         {
@@ -77,7 +79,9 @@ class FGMembersite
             return "error";
         }      
 
+		$qry = "SELECT SUM(amount) FROM spending_data WHERE month=$month AND username=$_SESSION[username]";
 		
+		return mysql_query($qry,$this->connection);
 	}
 	
     function RegisterUser()
