@@ -38,3 +38,12 @@
 [12-Jun-2014 12:05:09 America/New_York] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/heuncxep/public_html/tracker.php on line 18
 [12-Jun-2014 22:59:26 America/New_York] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/heuncxep/public_html/tracker.php on line 26
 [12-Jun-2014 22:59:50 America/New_York] PHP Parse error:  syntax error, unexpected T_VARIABLE in /home/heuncxep/public_html/tracker.php on line 26
+[19-Jun-2014 11:01:16 Asia/Seoul] PHP Warning:  mysql_real_escape_string() [<a href='function.mysql-real-escape-string'>function.mysql-real-escape-string</a>]: Access denied for user 'root'@'localhost' (using password: NO) in /home/heuncxep/public_html/include/fg_membersite.php on line 837
+[19-Jun-2014 11:01:16 Asia/Seoul] PHP Warning:  mysql_real_escape_string() [<a href='function.mysql-real-escape-string'>function.mysql-real-escape-string</a>]: A link to the server could not be established in /home/heuncxep/public_html/include/fg_membersite.php on line 837
+[19-Jun-2014 11:01:16 Asia/Seoul] PHP Warning:  mysql_query() expects parameter 2 to be resource, null given in /home/heuncxep/public_html/include/fg_membersite.php on line 78
+[19-Jun-2014 11:01:52 Asia/Seoul] PHP Warning:  mysql_real_escape_string() [<a href='function.mysql-real-escape-string'>function.mysql-real-escape-string</a>]: Access denied for user 'root'@'localhost' (using password: NO) in /home/heuncxep/public_html/include/fg_membersite.php on line 843
+[19-Jun-2014 11:01:52 Asia/Seoul] PHP Warning:  mysql_real_escape_string() [<a href='function.mysql-real-escape-string'>function.mysql-real-escape-string</a>]: A link to the server could not be established in /home/heuncxep/public_html/include/fg_membersite.php on line 843
+[18-Jun-2014 22:04:54 America/New_York] PHP Parse error:  syntax error, unexpected T_RETURN in /home/heuncxep/public_html/include/fg_membersite.php on line 86
+[19-Jun-2014 11:14:34 Asia/Seoul] PHP Warning:  mysql_fetch_row() expects parameter 1 to be resource, boolean given in /home/heuncxep/public_html/include/fg_membersite.php on line 84
+[19-Jun-2014 11:15:11 Asia/Seoul] PHP Warning:  mysql_fetch_row() expects parameter 1 to be resource, boolean given in /home/heuncxep/public_html/include/fg_membersite.php on line 84
+[19-Jun-2014 11:15:32 Asia/Seoul] PHP Warning:  mysql_fetch_row() expects parameter 1 to be resource, boolean given in /home/heuncxep/public_html/include/fg_membersite.php on line 84

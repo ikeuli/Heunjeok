@@ -79,9 +79,11 @@ class FGMembersite
             return "error";
         }      
 
-		$qry = "SELECT SUM(amount) FROM spending_data WHERE month=$month AND username=$_SESSION[username]";
+		$qry = "SELECT SUM(amount) FROM spending_data WHERE month=$month AND username='$_SESSION[username]'";
+		$result = mysql_query($qry,$this->connection);
+		$mt = mysql_fetch_row($result);
 		
-		return mysql_query($qry,$this->connection);
+		return (int) $mt[0];
 	}
 	
     function RegisterUser()

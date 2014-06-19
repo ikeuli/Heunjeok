@@ -55,7 +55,9 @@ if(!$fgmembersite->CheckLogin())
 				</fieldset>
 			</form>
 			</div>
-			<div><span class='error'><?php echo $fgmembersite->getMonthlyTotal() + "4"; ?></span></div>
+			<br/>
+			<br/>
+			<div id="monthly_total">Monthly Total: <?php echo $fgmembersite->getMonthlyTotal(); ?></div>
             <img src="/assets/images/dollarswon.png" alt="Dollar and won sign">
 			<script type='text/javascript'>
 				// <![CDATA[

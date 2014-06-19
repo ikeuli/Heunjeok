@@ -19,6 +19,13 @@
 	margin:auto;
 }
 
+.monthly_total
+{
+	font-size:30px;
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	color:yellow;
+}
+
 p
 {
 	font-size:40px;
