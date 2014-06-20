@@ -57,7 +57,11 @@ if(!$fgmembersite->CheckLogin())
 			</div>
 			<br/>
 			<br/>
-			<div id="monthly_total">Monthly Total: <?php echo $fgmembersite->getMonthlyTotal(); ?></div>
+			<?php
+				$mt = $fgmembersite->getMonthlyTotal();
+				setlocale(LC_MONETARY, 'kor_KOR');
+			?>	
+			<p class="monthly_total">Monthly Total: <?php echo money_format('%n', $mt) . "\n"; ?></p>
             <img src="/assets/images/dollarswon.png" alt="Dollar and won sign">
 			<script type='text/javascript'>
 				// <![CDATA[
