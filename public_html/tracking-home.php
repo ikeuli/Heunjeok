@@ -13,7 +13,7 @@ if(!$fgmembersite->CheckLogin())
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
 <head>
       <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
-      <title>Heunjeok | Home 2</title>
+      <title>Heunjeok | Input Page</title>
 	  <link rel="STYLESHEET" type="text/css" href="css/fg_membersite.css" />
 	  <script type='text/javascript' src='js/gen_validatorv31.js'></script>
       <link rel="STYLESHEET" type="text/css" href="css/style.css">
@@ -23,6 +23,9 @@ if(!$fgmembersite->CheckLogin())
         <ul id="nav_container">
             <li>
                 <div id="logged_in_as">Logged in as: <?= $fgmembersite->UserFullName(); ?></div> 
+            </li>
+			<li>
+                <a href='mystats.php'>My Stats</a>
             </li>
             <li>
                 <a href='logout.php'>Logout</a>
