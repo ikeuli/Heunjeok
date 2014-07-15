@@ -7,16 +7,17 @@ $connect = mysql_connect("localhost", "heuncxep", "fadfjke11");
 if (!connect) { die('Connection Failed: ' . mysql_error()); } 
 mysql_select_db("heuncxep_heunjeok", $connect);
 
-date_default_timezone_set('Asia/Seoul');
-$day = date(d);
-$month = date(m);
+$day = $fgmembersite->getDay();
+$month = $fgmembersite->getMonth();
+$year = $fgmembersite->getYear();
 
 $user_info = 'INSERT INTO spending_data (
 	username, 
 	category, 
 	amount,
 	day,
-	month
+	month,
+	year
 	) 
 	VALUES 
 	(
@@ -24,7 +25,8 @@ $user_info = 'INSERT INTO spending_data (
 	"' . $fgmembersite->SanitizeForSQL($_POST['spending_category']) . '", 
 	"' . $fgmembersite->SanitizeForSQL($_POST['amount_spent']) . '",
 	"' . $day . '",
-	"' . $month . '"
+	"' . $month . '",
+	"' . $year . '"
 	)';
 	
 if (!mysql_query($user_info, $connect)) { die('Error: ' . mysql_error()); }

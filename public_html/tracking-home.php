@@ -62,8 +62,7 @@ if(!$fgmembersite->CheckLogin())
 			<br/>
 			<?php
 				$mt = $fgmembersite->getMonthlyTotal();
-				date_default_timezone_set('Asia/Seoul');
-				$month = date(F);
+				$month = $fgmembersite->getMonthWord();
 			?>	
 			<p class="monthly_total"><?php echo $month ?> Total: ₩<?php echo number_format($mt, 0, '.', ',') . "\n"; ?></p>
             <img src="/assets/images/dollarswon.png" alt="Dollar and won sign">

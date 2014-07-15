@@ -36,9 +36,13 @@ if(!$fgmembersite->CheckLogin())
             </li>
         </ul>
 		<div id="main_content" align="center">
-			<?PHP
-				
-			?>
+			<?php echo $fgmembersite->getMonthlyData(); ?>
+			<table>
+				<tr>
+					<th>Date</th>
+					<th>Category</th>
+					<th>Amount</th>
+				</tr>
 		</div>
     </body>
 </html>

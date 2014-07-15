@@ -71,7 +71,7 @@ class FGMembersite
     function getMonthlyTotal ()
 	{
 		$mt = 0;
-		$month = date(m);
+		$month = $this->getMonth();
 	
 		if(!$this->DBLogin())
         {
@@ -84,6 +84,49 @@ class FGMembersite
 		$mt = mysql_fetch_row($result);
 		
 		return (int) $mt[0];
+	}
+	
+	function getMonthlyData ($month)
+	{
+		if(!$this->DBLogin())
+        {
+            $this->HandleError("Database login failed!");
+            return "error";
+        }      
+
+		$month = $this->getMonth();
+		$qry = "SELECT day, category, amount FROM spending_data WHERE month=$month AND username='$_SESSION[username]'";
+		$result = mysql_query($qry,$this->connection);
+		
+		return $result;
+	}
+	
+	function getMonth ()
+	{
+		date_default_timezone_set('Asia/Seoul');
+		
+		return (int) date(m);
+	}
+	
+	function getMonthWord ()
+	{
+		date_default_timezone_set('Asia/Seoul');
+		
+		return date(F);
+	}
+	
+	function getDay ()
+	{
+		date_default_timezone_set('Asia/Seoul');
+		
+		return (int) date(d);
+	}
+	
+	function getYear ()
+	{
+		date_default_timezone_set('Asia/Seoul');
+		
+		return (int) date(Y);
 	}
 	
     function RegisterUser()

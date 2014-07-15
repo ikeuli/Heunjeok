@@ -47,3 +47,6 @@
 [19-Jun-2014 11:14:34 Asia/Seoul] PHP Warning:  mysql_fetch_row() expects parameter 1 to be resource, boolean given in /home/heuncxep/public_html/include/fg_membersite.php on line 84
 [19-Jun-2014 11:15:11 Asia/Seoul] PHP Warning:  mysql_fetch_row() expects parameter 1 to be resource, boolean given in /home/heuncxep/public_html/include/fg_membersite.php on line 84
 [19-Jun-2014 11:15:32 Asia/Seoul] PHP Warning:  mysql_fetch_row() expects parameter 1 to be resource, boolean given in /home/heuncxep/public_html/include/fg_membersite.php on line 84
+[19-Jun-2014 20:59:44 America/New_York] PHP Parse error:  syntax error, unexpected T_ECHO in /home/heuncxep/public_html/tracking-home.php on line 61
+[15-Jul-2014 10:29:27 Asia/Seoul] PHP Fatal error:  Call to undefined function getMonth() in /home/heuncxep/public_html/include/fg_membersite.php on line 74
+[15-Jul-2014 10:30:14 Asia/Seoul] PHP Warning:  Missing argument 1 for FGMembersite::getMonthlyData(), called in /home/heuncxep/public_html/mystats.php on line 39 and defined in /home/heuncxep/public_html/include/fg_membersite.php on line 89
