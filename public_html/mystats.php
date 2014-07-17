@@ -36,13 +36,25 @@ if(!$fgmembersite->CheckLogin())
             </li>
         </ul>
 		<div id="main_content" align="center">
-			<?php echo $fgmembersite->getMonthlyData(); ?>
+			<?php $data = $fgmembersite->getMonthlyData(); ?>
 			<table>
-				<tr>
-					<th>Date</th>
-					<th>Category</th>
-					<th>Amount</th>
-				</tr>
+				<thead>
+					<tr>
+						<th>Date</th>
+						<th>Category</th>
+						<th>Amount</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php while ($row = mysql_fetch_array($data)) { ?>
+						<tr>
+							<td><?php echo $row['day']?></td>
+							<td><?php echo $row['category']?></td>
+							<td><?php echo $row['amount']?></td>
+						</tr>
+					<?php } ?>
+				</tbody>
+			</table>
 		</div>
     </body>
 </html>

@@ -86,7 +86,7 @@ class FGMembersite
 		return (int) $mt[0];
 	}
 	
-	function getMonthlyData ($month)
+	function getMonthlyData ()
 	{
 		if(!$this->DBLogin())
         {
