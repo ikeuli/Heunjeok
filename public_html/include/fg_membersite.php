@@ -95,7 +95,7 @@ class FGMembersite
         }      
 
 		$month = $this->getMonth();
-		$qry = "SELECT day, category, amount FROM spending_data WHERE month=$month AND username='$_SESSION[username]'";
+		$qry = "SELECT day, category, amount FROM spending_data WHERE month=$month AND username='$_SESSION[username]' ORDER BY day";
 		$result = mysql_query($qry,$this->connection);
 		
 		return $result;

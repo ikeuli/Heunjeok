@@ -37,7 +37,7 @@ if(!$fgmembersite->CheckLogin())
         </ul>
 		<div id="main_content" align="center">
 			<?php $data = $fgmembersite->getMonthlyData(); ?>
-			<table>
+			<table cellpadding=6 rules=groups>
 				<thead>
 					<tr>
 						<th>Date</th>
@@ -45,15 +45,26 @@ if(!$fgmembersite->CheckLogin())
 						<th>Amount</th>
 					</tr>
 				</thead>
-				<tbody>
-					<?php while ($row = mysql_fetch_array($data)) { ?>
+				<?php $day = 0;
+				while ($row = mysql_fetch_array($data)) {
+					if ($day == $row['day']) { ?>
 						<tr>
-							<td><?php echo $row['day']?></td>
-							<td><?php echo $row['category']?></td>
-							<td><?php echo $row['amount']?></td>
+							<td><?php echo "";?></td>
+							<td><?php echo $row['category'];?></td>
+							<td><?php echo $row['amount'];?></td>
 						</tr>
-					<?php } ?>
-				</tbody>
+					<?php }
+					else {
+						$day = $row['day']; ?>
+						</tbody>
+						<tbody>
+							<tr>
+								<td><?php echo $row['day'];?></td>
+								<td><?php echo $row['category'];?></td>
+								<td><?php echo $row['amount'];?></td>
+							</tr>
+					<?php }
+				} ?>
 			</table>
 		</div>
     </body>
