@@ -45,7 +45,16 @@ if(!$fgmembersite->CheckLogin())
 						<th>Amount</th>
 					</tr>
 				</thead>
-				<?php $day = 0;
+				<?php
+				$row = mysql_fetch_array($data); ?>
+				<tbody>
+					<tr>
+						<td><?php echo $row['day'];?></td>
+						<td><?php echo $row['category'];?></td>
+						<td><?php echo $row['amount'];?></td>
+					</tr>
+				<?php $day = $row['day'];
+				$total = $row['amount'];
 				while ($row = mysql_fetch_array($data)) {
 					if ($day == $row['day']) { ?>
 						<tr>
@@ -53,10 +62,17 @@ if(!$fgmembersite->CheckLogin())
 							<td><?php echo $row['category'];?></td>
 							<td><?php echo $row['amount'];?></td>
 						</tr>
-					<?php }
+					<?php $total += $row['amount'];
+					}
 					else {
 						$day = $row['day']; ?>
 						</tbody>
+						<tfoot>
+							<tr>
+								<td><?php echo "Total:", $total;?></td>
+								<?php $total = 0; ?>
+							</tr>
+						</tfoot>
 						<tbody>
 							<tr>
 								<td><?php echo $row['day'];?></td>
