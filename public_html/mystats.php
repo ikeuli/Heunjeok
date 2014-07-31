@@ -67,12 +67,10 @@ if(!$fgmembersite->CheckLogin())
 					else {
 						$day = $row['day']; ?>
 						</tbody>
-						<tfoot>
 							<tr>
-								<td><?php echo "Total:", $total;?></td>
-								<?php $total = 0; ?>
+								<td class="total"><?php echo "Total:", $total;?></td>
+								<?php $total = $row['amount']; ?>
 							</tr>
-						</tfoot>
 						<tbody>
 							<tr>
 								<td><?php echo $row['day'];?></td>
@@ -81,6 +79,8 @@ if(!$fgmembersite->CheckLogin())
 							</tr>
 					<?php }
 				} ?>
+				</tbody>
+				<td class="total"><?php echo "Total:", $total;?></td>
 			</table>
 		</div>
     </body>
