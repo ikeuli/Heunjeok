@@ -37,7 +37,7 @@ if(!$fgmembersite->CheckLogin())
         </ul>
 		<div id="main_content" align="center">
 			<?php $data = $fgmembersite->getMonthlyData(); ?>
-			<table cellpadding=6 rules=groups>
+			<table class="datagrid" cellpadding=6 rules=groups>
 				<thead>
 					<tr>
 						<th>Date</th>
