@@ -36,6 +36,11 @@ if(!$fgmembersite->CheckLogin())
             </li>
         </ul>
 		<div id="main_content" align="center">
+			<p>
+				<?php echo $fgmembersite->getMonthWord();
+				echo " ";
+				echo $fgmembersite->getYear(); ?>
+			</p>
 			<?php $data = $fgmembersite->getMonthlyData(); ?>
 			<table class="datagrid" cellpadding=6 rules=groups>
 				<thead>
@@ -51,7 +56,7 @@ if(!$fgmembersite->CheckLogin())
 					<tr>
 						<td><?php echo $row['day'];?></td>
 						<td><?php echo $row['category'];?></td>
-						<td><?php echo $row['amount'];?></td>
+						<td><?php echo number_format($row['amount'], 0, '.', ',') . "\n";?></td>
 					</tr>
 				<?php $day = $row['day'];
 				$total = $row['amount'];
@@ -60,7 +65,7 @@ if(!$fgmembersite->CheckLogin())
 						<tr>
 							<td><?php echo "";?></td>
 							<td><?php echo $row['category'];?></td>
-							<td><?php echo $row['amount'];?></td>
+							<td><?php echo number_format($row['amount'], 0, '.', ',') . "\n";?></td>
 						</tr>
 					<?php $total += $row['amount'];
 					}
@@ -68,20 +73,21 @@ if(!$fgmembersite->CheckLogin())
 						$day = $row['day']; ?>
 						</tbody>
 							<tr>
-								<td class="total"><?php echo "Total:", $total;?></td>
+								<td class="total">Total: ₩<?php echo number_format($total, 0, '.', ',') . "\n"; ?></td>
 								<?php $total = $row['amount']; ?>
 							</tr>
 						<tbody>
 							<tr>
 								<td><?php echo $row['day'];?></td>
 								<td><?php echo $row['category'];?></td>
-								<td><?php echo $row['amount'];?></td>
+								<td><?php echo number_format($row['amount'], 0, '.', ',') . "\n";?></td>
 							</tr>
 					<?php }
 				} ?>
 				</tbody>
-				<td class="total"><?php echo "Total:", $total;?></td>
+				<td class="total">Total: ₩<?php echo number_format($total, 0, '.', ',') . "\n"; ?></td>
 			</table>
+			<img src="/assets/images/dollarswon.png" alt="Dollar and won sign">
 		</div>
     </body>
 </html>
