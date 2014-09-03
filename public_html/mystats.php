@@ -41,8 +41,17 @@ if(!$fgmembersite->CheckLogin())
 				echo " ";
 				echo $fgmembersite->getYear(); ?>
 			</p>
+			<form id='view_month' action='mystats_view_month.php' method='post' accept-charset='UTF-8'>
+				<select name="view_month">
+					<option value="Milk">Fresh Milk</option>
+					<option value="Cheese">Old Cheese</option>
+					<option value="Bread">Hot Bread</option>
+				</select>
+			</form>
+			<br/>
+			<br/>
 			<?php $data = $fgmembersite->getMonthlyData(); ?>
-			<table class="datagrid" cellpadding=6 rules=groups>
+			<table rules=groups>
 				<thead>
 					<tr>
 						<th>Date</th>
@@ -73,6 +82,7 @@ if(!$fgmembersite->CheckLogin())
 						$day = $row['day']; ?>
 						</tbody>
 							<tr>
+								<td></td><td></td>
 								<td class="total">Total: ₩<?php echo number_format($total, 0, '.', ',') . "\n"; ?></td>
 								<?php $total = $row['amount']; ?>
 							</tr>
@@ -85,8 +95,14 @@ if(!$fgmembersite->CheckLogin())
 					<?php }
 				} ?>
 				</tbody>
+				<td></td><td></td>
 				<td class="total">Total: ₩<?php echo number_format($total, 0, '.', ',') . "\n"; ?></td>
 			</table>
+			<?php
+				$mt = $fgmembersite->getMonthlyTotal();
+				$month = $fgmembersite->getMonthWord();
+			?>	
+			<p class="monthly_total"><?php echo $month ?> Total: ₩<?php echo number_format($mt, 0, '.', ',') . "\n"; ?></p>
 			<img src="/assets/images/dollarswon.png" alt="Dollar and won sign">
 		</div>
     </body>
