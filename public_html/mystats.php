@@ -104,6 +104,7 @@ if(!$fgmembersite->CheckLogin())
 			?>	
 			<p class="monthly_total"><?php echo $month ?> Total: ₩<?php echo number_format($mt, 0, '.', ',') . "\n"; ?></p>
 			<img src="/assets/images/dollarswon.png" alt="Dollar and won sign">
+			<?php print_r($fgmembersite->getUsersMonthList()) ;?>
 		</div>
     </body>
 </html>

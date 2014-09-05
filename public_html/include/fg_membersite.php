@@ -68,6 +68,24 @@ class FGMembersite
     }
     
     //-------Main Operations ----------------------
+	function getUsersMonthList ()
+	{
+		if(!$this->DBLogin())
+        {
+            $this->HandleError("Database login failed!");
+            return "error";
+        }      
+		
+		$qry = "SELECT month, year FROM spending_data WHERE username='$_SESSION[username]'";
+		$data = mysql_query($qry,$this->connection);
+		while($row = mysql_fetch_assoc($data)){
+			$array[] = $row;
+		}
+		$result = array_unique($array);
+		
+		return $result;
+	}
+	
     function getMonthlyTotal ()
 	{
 		$mt = 0;
