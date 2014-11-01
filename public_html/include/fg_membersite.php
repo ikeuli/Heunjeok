@@ -78,12 +78,31 @@ class FGMembersite
 		
 		$qry = "SELECT month, year FROM spending_data WHERE username='$_SESSION[username]'";
 		$data = mysql_query($qry,$this->connection);
+		
 		while($row = mysql_fetch_assoc($data)){
 			$array[] = $row;
 		}
-		$result = array_unique($array);
 		
-		return $result;
+		$unique = array();
+		$uniqueCount = 0;
+		for($i = 0; $i < count($array); ++$i)
+		{
+			$flag = 1;
+			for ($j = 0; $j < $uniqueCount; ++$j)
+			{
+				if ($unique[$j]['month'] == $array[$i]['month']) {
+					$flag = 0;
+					break;
+				}
+			}
+			if ($flag) {
+				$unique[$uniqueCount]['month'] = $array[$i]['month'];
+				$unique[$uniqueCount]['year'] = $array[$i]['year'];
+				$uniqueCount++;
+			}
+		}	
+		
+		return $unique;
 	}
 	
     function getMonthlyTotal ()

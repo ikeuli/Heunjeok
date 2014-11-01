@@ -42,10 +42,16 @@ if(!$fgmembersite->CheckLogin())
 				echo $fgmembersite->getYear(); ?>
 			</p>
 			<form id='view_month' action='mystats_view_month.php' method='post' accept-charset='UTF-8'>
+				<?php $months = $fgmembersite->getUsersMonthList();?>
 				<select name="view_month">
-					<option value="Milk">Fresh Milk</option>
-					<option value="Cheese">Old Cheese</option>
-					<option value="Bread">Hot Bread</option>
+				<?php for($i = 0; $i < count($months); ++$i) 
+				{
+					$output = "";
+					$monthName = date('F', mktime(0, 0, 0, $months[$i]['month'], 10));
+					$output .= $monthName." ".$months[$i]['year'];
+					echo "<option value=".$output.">".$output."</option>";
+				}
+				?>
 				</select>
 			</form>
 			<br/>
@@ -104,7 +110,6 @@ if(!$fgmembersite->CheckLogin())
 			?>	
 			<p class="monthly_total"><?php echo $month ?> Total: ₩<?php echo number_format($mt, 0, '.', ',') . "\n"; ?></p>
 			<img src="/assets/images/dollarswon.png" alt="Dollar and won sign">
-			<?php print_r($fgmembersite->getUsersMonthList()) ;?>
 		</div>
     </body>
 </html>
