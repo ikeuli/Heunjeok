@@ -1,5 +1,6 @@
 <?PHP
 require_once("./include/membersite_config.php");
+//session_start();
 
 if(!$fgmembersite->CheckLogin())
 {
@@ -41,15 +42,19 @@ if(!$fgmembersite->CheckLogin())
 				echo " ";
 				echo $fgmembersite->getYear(); ?>
 			</p>
-			<form id='view_month' action='mystats_view_month.php' method='post' accept-charset='UTF-8'>
+			<form id='view_month_id' action='my_stats_handler.php' method='post'>
 				<?php $months = $fgmembersite->getUsersMonthList();?>
-				<select name="view_month">
+				<select name="view_month" onchange="this.form.submit()">
+				<option value="default">Past</option>
 				<?php for($i = 0; $i < count($months); ++$i) 
 				{
 					$output = "";
 					$monthName = date('F', mktime(0, 0, 0, $months[$i]['month'], 10));
-					$output .= $monthName." ".$months[$i]['year'];
-					echo "<option value=".$output.">".$output."</option>";
+					if ($monthName != $fgmembersite->getMonthWord()) 
+					{
+						$output .= $monthName." ".$months[$i]['year'];
+						echo "<option value=".$output.">".$output."</option>";
+					}
 				}
 				?>
 				</select>

@@ -149,7 +149,10 @@ class FGMembersite
 	{
 		date_default_timezone_set('Asia/Seoul');
 		
-		return date(F);
+		if (isset ($_SESSION['month']))
+			return $_SESSION['month'];
+		else
+			return date(F);
 	}
 	
 	function getDay ()
@@ -163,7 +166,10 @@ class FGMembersite
 	{
 		date_default_timezone_set('Asia/Seoul');
 		
-		return (int) date(Y);
+		if (isset ($_SESSION['year']))
+			return (int) $_SESSION['year'];
+		else
+			return (int) date(Y);
 	}
 	
     function RegisterUser()
