@@ -38,9 +38,9 @@ if(!$fgmembersite->CheckLogin())
         </ul>
 		<div id="main_content" align="center">
 			<p>
-				<?php echo $fgmembersite->getMonthWord();
+				<?php echo $fgmembersite->getMonthWord(0);
 				echo " ";
-				echo $fgmembersite->getYear(); ?>
+				echo $fgmembersite->getYear(0); ?>
 			</p>
 			<form id='view_month_id' action='my_stats_handler.php' method='post'>
 				<?php $months = $fgmembersite->getUsersMonthList();?>
@@ -50,10 +50,10 @@ if(!$fgmembersite->CheckLogin())
 				{
 					$output = "";
 					$monthName = date('F', mktime(0, 0, 0, $months[$i]['month'], 10));
-					if ($monthName != $fgmembersite->getMonthWord()) 
+					if ($monthName != $fgmembersite->getMonthWord(0)) 
 					{
 						$output .= $monthName." ".$months[$i]['year'];
-						echo "<option value=".$output.">".$output."</option>";
+						echo '"<option value="'.$output.'">'.$output.'</option>"';
 					}
 				}
 				?>
@@ -110,8 +110,8 @@ if(!$fgmembersite->CheckLogin())
 				<td class="total">Total: ₩<?php echo number_format($total, 0, '.', ',') . "\n"; ?></td>
 			</table>
 			<?php
-				$mt = $fgmembersite->getMonthlyTotal();
-				$month = $fgmembersite->getMonthWord();
+				$mt = $fgmembersite->getMonthlyTotal(0);
+				$month = $fgmembersite->getMonthWord(0);
 			?>	
 			<p class="monthly_total"><?php echo $month ?> Total: ₩<?php echo number_format($mt, 0, '.', ',') . "\n"; ?></p>
 			<img src="/assets/images/dollarswon.png" alt="Dollar and won sign">

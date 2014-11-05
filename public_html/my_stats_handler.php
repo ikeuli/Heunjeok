@@ -1,13 +1,12 @@
 <?php
 
 require_once("./include/membersite_config.php");
-//session_start();
+session_start();
 
-echo $_POST['view_month'];
 $tokens = explode(" ", $_POST['view_month']);
-echo $tokens[0];
-echo $tokens[1];
+$_SESSION['month'] = $tokens[0];
+$_SESSION['year'] = $tokens[1];
 
-//$fgmembersite->RedirectToURL("mystats.php");
+$fgmembersite->RedirectToURL("mystats.php");
 
 ?>

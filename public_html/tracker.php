@@ -8,8 +8,8 @@ if (!connect) { die('Connection Failed: ' . mysql_error()); }
 mysql_select_db("heuncxep_heunjeok", $connect);
 
 $day = $fgmembersite->getDay();
-$month = $fgmembersite->getMonth();
-$year = $fgmembersite->getYear();
+$month = $fgmembersite->getMonth(1);
+$year = $fgmembersite->getYear(1);
 
 $user_info = 'INSERT INTO spending_data (
 	username, 

@@ -61,8 +61,8 @@ if(!$fgmembersite->CheckLogin())
 			<br/>
 			<br/>
 			<?php
-				$mt = $fgmembersite->getMonthlyTotal();
-				$month = $fgmembersite->getMonthWord();
+				$mt = $fgmembersite->getMonthlyTotal(1);
+				$month = $fgmembersite->getMonthWord(1);
 			?>	
 			<p class="monthly_total"><?php echo $month ?> Total: ₩<?php echo number_format($mt, 0, '.', ',') . "\n"; ?></p>
             <img src="/assets/images/dollarswon.png" alt="Dollar and won sign">

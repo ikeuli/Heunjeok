@@ -105,10 +105,13 @@ class FGMembersite
 		return $unique;
 	}
 	
-    function getMonthlyTotal ()
+    function getMonthlyTotal ($flag)
 	{
 		$mt = 0;
-		$month = $this->getMonth();
+		if ($flag)
+			$month = $this->getMonth(1);
+		else
+			$month = $this->getMonth(0);
 	
 		if(!$this->DBLogin())
         {
@@ -131,25 +134,31 @@ class FGMembersite
             return "error";
         }      
 
-		$month = $this->getMonth();
+		$month = $this->getMonth(0);
 		$qry = "SELECT day, category, amount FROM spending_data WHERE month=$month AND username='$_SESSION[username]' ORDER BY day";
 		$result = mysql_query($qry,$this->connection);
 		
 		return $result;
 	}
 	
-	function getMonth ()
+	function getMonth ($flag)
 	{
 		date_default_timezone_set('Asia/Seoul');
 		
-		return (int) date(m);
+		if (isset ($_SESSION['month']) && !$flag)
+		{
+			$date = date_parse($_SESSION['month']);
+			return (int) $date['month'];
+		}
+		else
+			return (int) date(m);
 	}
 	
-	function getMonthWord ()
+	function getMonthWord ($flag)
 	{
 		date_default_timezone_set('Asia/Seoul');
 		
-		if (isset ($_SESSION['month']))
+		if (isset ($_SESSION['month']) && !$flag)
 			return $_SESSION['month'];
 		else
 			return date(F);
@@ -162,11 +171,11 @@ class FGMembersite
 		return (int) date(d);
 	}
 	
-	function getYear ()
+	function getYear ($flag)
 	{
 		date_default_timezone_set('Asia/Seoul');
 		
-		if (isset ($_SESSION['year']))
+		if (isset ($_SESSION['year']) && !$flag)
 			return (int) $_SESSION['year'];
 		else
 			return (int) date(Y);
