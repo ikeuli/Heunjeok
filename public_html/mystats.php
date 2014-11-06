@@ -1,8 +1,13 @@
 <?PHP
 require_once("./include/membersite_config.php");
-//session_start();
+session_start();
 
-if(!$fgmembersite->CheckLogin())
+if ($_SESSION['refresh_stats'])
+	$flag = 1;
+else
+	$flag = 0;
+
+if (!$fgmembersite->CheckLogin())
 {
     $fgmembersite->RedirectToURL("login.php");
     exit;
@@ -37,10 +42,10 @@ if(!$fgmembersite->CheckLogin())
             </li>
         </ul>
 		<div id="main_content" align="center">
-			<p>
-				<?php echo $fgmembersite->getMonthWord(0);
+			<p> 
+				<?php echo $fgmembersite->getMonthWord($flag);
 				echo " ";
-				echo $fgmembersite->getYear(0); ?>
+				echo $fgmembersite->getYear($flag); ?>
 			</p>
 			<form id='view_month_id' action='my_stats_handler.php' method='post'>
 				<?php $months = $fgmembersite->getUsersMonthList();?>
@@ -50,7 +55,7 @@ if(!$fgmembersite->CheckLogin())
 				{
 					$output = "";
 					$monthName = date('F', mktime(0, 0, 0, $months[$i]['month'], 10));
-					if ($monthName != $fgmembersite->getMonthWord(0)) 
+					if ($monthName != $fgmembersite->getMonthWord($flag)) 
 					{
 						$output .= $monthName." ".$months[$i]['year'];
 						echo '"<option value="'.$output.'">'.$output.'</option>"';
@@ -59,9 +64,14 @@ if(!$fgmembersite->CheckLogin())
 				?>
 				</select>
 			</form>
-			<br/>
-			<br/>
-			<?php $data = $fgmembersite->getMonthlyData(); ?>
+			
+			<?php
+				$mt = $fgmembersite->getMonthlyTotal($flag);
+				$month = $fgmembersite->getMonthWord($flag);
+			?>	
+			<p class="monthly_total"><?php echo $month ?> Total: ₩<?php echo number_format($mt, 0, '.', ',') . "\n"; ?></p>
+			
+			<?php $data = $fgmembersite->getMonthlyData($flag); ?>
 			<table rules=groups>
 				<thead>
 					<tr>
@@ -109,11 +119,6 @@ if(!$fgmembersite->CheckLogin())
 				<td></td><td></td>
 				<td class="total">Total: ₩<?php echo number_format($total, 0, '.', ',') . "\n"; ?></td>
 			</table>
-			<?php
-				$mt = $fgmembersite->getMonthlyTotal(0);
-				$month = $fgmembersite->getMonthWord(0);
-			?>	
-			<p class="monthly_total"><?php echo $month ?> Total: ₩<?php echo number_format($mt, 0, '.', ',') . "\n"; ?></p>
 			<img src="/assets/images/dollarswon.png" alt="Dollar and won sign">
 		</div>
     </body>

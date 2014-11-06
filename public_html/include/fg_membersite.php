@@ -102,7 +102,7 @@ class FGMembersite
 			}
 		}	
 		
-		return $unique;
+		return array_reverse($unique);
 	}
 	
     function getMonthlyTotal ($flag)
@@ -126,7 +126,7 @@ class FGMembersite
 		return (int) $mt[0];
 	}
 	
-	function getMonthlyData ()
+	function getMonthlyData ($flag)
 	{
 		if(!$this->DBLogin())
         {
@@ -134,7 +134,7 @@ class FGMembersite
             return "error";
         }      
 
-		$month = $this->getMonth(0);
+		$month = $this->getMonth($flag);
 		$qry = "SELECT day, category, amount FROM spending_data WHERE month=$month AND username='$_SESSION[username]' ORDER BY day";
 		$result = mysql_query($qry,$this->connection);
 		
