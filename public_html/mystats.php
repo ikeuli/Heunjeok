@@ -50,8 +50,12 @@ if (!$fgmembersite->CheckLogin())
 			<form id='view_month_id' action='my_stats_handler.php' method='post'>
 				<?php $months = $fgmembersite->getUsersMonthList();?>
 				<select name="view_month" onchange="this.form.submit()">
-				<option value="default">Past</option>
-				<?php for($i = 0; $i < count($months); ++$i) 
+				<?php $output = "";
+				$currentMonth = $fgmembersite->getMonthWord($flag);
+				$currentYear = $fgmembersite->getYear($flag);
+				$output .= $currentMonth." ".$currentYear;
+				echo '"<option value="default">'.$output.'</option>"';
+				for($i = 0; $i < count($months); ++$i) 
 				{
 					$output = "";
 					$monthName = date('F', mktime(0, 0, 0, $months[$i]['month'], 10));

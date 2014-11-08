@@ -22,7 +22,7 @@ if(isset($_POST['submitted']))
 </head>
 <body background="/assets/images/background.jpg">
 	<img src="/assets/images/heunjeok.png" id="logo" alt="Heunjeok logo">
-	<ul id="nav_container">
+	<!--<ul id="nav_container">
 		<li>
 			<a href="index.html">Home</a>
 		</li>
@@ -35,7 +35,7 @@ if(isset($_POST['submitted']))
 		<li>
 			<a href="contact.html">Contact</a>
 		</li>
-	</ul>
+	</ul>-->
 
 <!-- Form Code Start -->
 <div id="main_content" align="center">
@@ -66,6 +66,7 @@ if(isset($_POST['submitted']))
 <div class='short_explanation'><a href='reset-pwd-req.php'>Forgot Password?</a></div>
 </fieldset>
 </form>
+<p class="p2">Not a member? <a href="register.php">Register</a> now.</p>
 <img src="/assets/images/dollarswon.png" alt="Dollar and won sign">
 
 <!-- client-side Form Validations:

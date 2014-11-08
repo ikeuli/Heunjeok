@@ -23,7 +23,7 @@ if(isset($_POST['submitted']))
 </head>
 <body background="/assets/images/background.jpg">
 	<img src="/assets/images/heunjeok.png" id="logo" alt="Heunjeok logo">
-	<ul id="nav_container">
+	<!--<ul id="nav_container">
 		<li>
 			<a href="index.html">Home</a>
 		</li>
@@ -36,7 +36,7 @@ if(isset($_POST['submitted']))
 		<li>
 			<a href="contact.html">Contact</a>
 		</li>
-	</ul>
+	</ul>-->
 
 <!-- Form Code Start -->
 <div id="main_content" align="center">
@@ -84,6 +84,7 @@ if(isset($_POST['submitted']))
 <!-- client-side Form Validations:
 Uses the excellent form validation script from JavaScript-coder.com-->
 
+<p class="p2">Already a member? <a href="login.php">Log in</a> now.</p>
 <img src="/assets/images/dollarswon.png" alt="Dollar and won sign">
 
 <script type='text/javascript'>
