@@ -20,7 +20,6 @@ http://www.html-form-guide.com/php-form/php-login-form.html
 */
 require_once("class.phpmailer.php");
 require_once("formvalidator.php");
-date_default_timezone_set('Asia/Seoul');
 
 class FGMembersite
 {
@@ -68,6 +67,18 @@ class FGMembersite
     }
     
     //-------Main Operations ----------------------
+	//Time zone list borrowed from http://stackoverflow.com/a/9328760
+	function tz_list() {
+		$zones_array = array();
+		$timestamp = time();
+		foreach(timezone_identifiers_list() as $key => $zone) {
+			date_default_timezone_set($zone);
+			$zones_array[$key]['zone'] = $zone;
+			$zones_array[$key]['diff_from_GMT'] = 'UTC/GMT ' . date('P', $timestamp);
+		}
+		return $zones_array;
+	}
+	
 	function getUsersMonthList ()
 	{
 		if(!$this->DBLogin())
