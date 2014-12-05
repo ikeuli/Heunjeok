@@ -67,6 +67,26 @@ class FGMembersite
     }
     
     //-------Main Operations ----------------------
+	function getUsersTimezone()
+	{
+		if(!$this->DBLogin())
+        {
+            $this->HandleError("Database login failed!");
+            return "error";
+        }  
+		
+		$qry = "SELECT username FROM timezone_currency";
+		$result = mysql_query($qry,$this->connection);
+		
+		while($row = mysql_fetch_assoc($result))
+		{
+			if($row['username'] = $_SESSION['username']) return true;
+		}
+		
+		return false;
+
+	}
+	
 	//Time zone list borrowed from http://stackoverflow.com/a/9328760
 	function tz_list() {
 		$zones_array = array();

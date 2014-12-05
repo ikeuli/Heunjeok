@@ -5,8 +5,10 @@ if(isset($_POST['submitted']))
 {
    if($fgmembersite->Login())
    {
-        /*$fgmembersite->RedirectToURL("login-home.php")*/
-		$fgmembersite->RedirectToURL("tracking-home.php");
+		if ($fgmembersite->getUsersTimezone())
+			$fgmembersite->RedirectToURL("tracking-home.php");
+		else
+			$fgmembersite->RedirectToURL("user-settings.php");
    }
 }
 
