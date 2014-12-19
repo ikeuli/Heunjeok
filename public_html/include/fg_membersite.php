@@ -34,6 +34,9 @@ class FGMembersite
     var $rand_key;
     
     var $error_message;
+	
+	var $timezone;
+	var $currency;
     
     //-----Initialization -------
     function FGMembersite()
@@ -65,9 +68,24 @@ class FGMembersite
     {
         $this->rand_key = $key;
     }
+	
+	function setUsersTZandCURR()
+	{
+		if(!$this->DBLogin())
+        {
+            $this->HandleError("Database login failed!");
+            return "error";
+			
+			$qry = "SELECT timezone, currency FROM timezone_currency WHERE username='$_SESSION[username]'";
+			$result = mysql_query($qry,$this->connection);
+			$row = mysql_fetch_assoc($result);
+			$timezone = $row['timezone'];
+			$currency = $row['currency'];
+        }  
+	}
     
     //-------Main Operations ----------------------
-	function getUsersTimezone()
+	function checkUsersTimezone()
 	{
 		if(!$this->DBLogin())
         {
@@ -174,7 +192,7 @@ class FGMembersite
 	
 	function getMonth ($flag)
 	{
-		date_default_timezone_set('Asia/Seoul');
+		date_default_timezone_set($timezone);
 		
 		if (isset ($_SESSION['month']) && !$flag)
 		{
@@ -187,7 +205,7 @@ class FGMembersite
 	
 	function getMonthWord ($flag)
 	{
-		date_default_timezone_set('Asia/Seoul');
+		date_default_timezone_set($timezone);
 		
 		if (isset ($_SESSION['month']) && !$flag)
 			return $_SESSION['month'];
@@ -197,14 +215,14 @@ class FGMembersite
 	
 	function getDay ()
 	{
-		date_default_timezone_set('Asia/Seoul');
+		date_default_timezone_set($timezone);
 		
 		return (int) date(d);
 	}
 	
 	function getYear ($flag)
 	{
-		date_default_timezone_set('Asia/Seoul');
+		date_default_timezone_set($timezone);
 		
 		if (isset ($_SESSION['year']) && !$flag)
 			return (int) $_SESSION['year'];
