@@ -172,7 +172,7 @@ class FGMembersite
 		$result = mysql_query($qry,$this->connection);
 		$mt = mysql_fetch_row($result);
 		
-		return (int) $mt[0];
+		return (real) $mt[0];
 	}
 	
 	function getMonthlyData ($flag)
