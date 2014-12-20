@@ -22,7 +22,7 @@ if(!$fgmembersite->CheckLogin())
 </head>
 
 	<!--If the user's currency is dollars.-->
-	<?php if ($fgmembersite->currency == 0) { ?>
+	<?php if ($fgmembersite->getCURR() == 0) { ?>
 	<body background="/assets/images/background.jpg">
         <img src="/assets/images/heunjeok.png" id="logo" alt="Heunjeok logo">
         <ul id="nav_container">
@@ -90,7 +90,7 @@ if(!$fgmembersite->CheckLogin())
     </body> <?php }
 	
 	//If the user's surrency is Korean Won.
-	if ($fgmembersite->currency == 1) { ?>
+	elseif ($fgmembersite->getCURR() == 1) { ?>
 	<body background="/assets/images/background.jpg">
         <img src="/assets/images/heunjeok.png" id="logo" alt="Heunjeok logo">
         <ul id="nav_container">

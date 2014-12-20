@@ -22,5 +22,5 @@ $user_info = 'INSERT INTO timezone_currency (
 if (!mysql_query($user_info, $connect)) { die('Error: ' . mysql_error()); }
 mysql_close($connect); 
 	
-$fgmembersite->setUsersTZandCURR();
+//$fgmembersite->setUsersTZandCURR();
 $fgmembersite->RedirectToURL("tracking-home.php");

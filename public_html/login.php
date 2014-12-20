@@ -7,7 +7,7 @@ if(isset($_POST['submitted']))
    {
 		if ($fgmembersite->checkUsersTimezone())
 		{
-			$fgmembersite->setUsersTZandCURR();
+			//$fgmembersite->setUsersTZandCURR();
 			$fgmembersite->RedirectToURL("tracking-home.php");
 		}
 		else

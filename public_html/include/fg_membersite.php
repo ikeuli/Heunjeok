@@ -34,9 +34,6 @@ class FGMembersite
     var $rand_key;
     
     var $error_message;
-	
-	var $timezone;
-	var $currency;
     
     //-----Initialization -------
     function FGMembersite()
@@ -69,7 +66,7 @@ class FGMembersite
         $this->rand_key = $key;
     }
 	
-	function setUsersTZandCURR()
+	/*function setUsersTZandCURR()
 	{
 		if(!$this->DBLogin())
         {
@@ -79,10 +76,10 @@ class FGMembersite
 			$qry = "SELECT timezone, currency FROM timezone_currency WHERE username='$_SESSION[username]'";
 			$result = mysql_query($qry,$this->connection);
 			$row = mysql_fetch_assoc($result);
-			$timezone = $row['timezone'];
-			$currency = $row['currency'];
+			$this->timezone = $row['timezone'];
+			$this->currency = $row['currency'];
         }  
-	}
+	}*/
     
     //-------Main Operations ----------------------
 	function checkUsersTimezone()
@@ -98,11 +95,39 @@ class FGMembersite
 		
 		while($row = mysql_fetch_assoc($result))
 		{
-			if($row['username'] = $_SESSION['username']) return true;
+			if($row['username'] == $_SESSION['username']) return true;
 		}
 		
 		return false;
 
+	}
+	
+	function getTZ() 
+	{
+		if(!$this->DBLogin())
+        {
+            $this->HandleError("Database login failed!");
+            return "error";
+        }  
+		
+		$qry = "SELECT timezone FROM timezone_currency WHERE username='$_SESSION[username]'";
+		$result = mysql_query($qry,$this->connection);
+		$row = mysql_fetch_assoc($result);
+		return $row['timezone'];
+	}
+	
+	function getCURR() 
+	{
+		if(!$this->DBLogin())
+        {
+            $this->HandleError("Database login failed!");
+            return "error";
+        }  
+		
+		$qry = "SELECT currency FROM timezone_currency WHERE username='$_SESSION[username]'";
+		$result = mysql_query($qry,$this->connection);
+		$row = mysql_fetch_assoc($result);
+		return $row['currency'];
 	}
 	
 	//Time zone list borrowed from http://stackoverflow.com/a/9328760
@@ -192,7 +217,7 @@ class FGMembersite
 	
 	function getMonth ($flag)
 	{
-		date_default_timezone_set($timezone);
+		date_default_timezone_set($this->getTZ());
 		
 		if (isset ($_SESSION['month']) && !$flag)
 		{
@@ -205,7 +230,7 @@ class FGMembersite
 	
 	function getMonthWord ($flag)
 	{
-		date_default_timezone_set($timezone);
+		date_default_timezone_set($this->getTZ());
 		
 		if (isset ($_SESSION['month']) && !$flag)
 			return $_SESSION['month'];
@@ -215,14 +240,14 @@ class FGMembersite
 	
 	function getDay ()
 	{
-		date_default_timezone_set($timezone);
+		date_default_timezone_set($this->getTZ());
 		
 		return (int) date(d);
 	}
 	
 	function getYear ($flag)
 	{
-		date_default_timezone_set($timezone);
+		date_default_timezone_set($this->getTZ());
 		
 		if (isset ($_SESSION['year']) && !$flag)
 			return (int) $_SESSION['year'];
