@@ -1,7 +1,7 @@
  <?php
  
-	require_once("./include/membersite_config.php");
- 
+	require_once("/home/heuncxep/public_html/include/fg_membersite.php");
+	phpinfo();
 	echo 'success';
  
 ?>
