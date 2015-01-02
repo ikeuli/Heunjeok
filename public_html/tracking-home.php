@@ -22,7 +22,7 @@ if(!$fgmembersite->CheckLogin())
 </head>
 
 	<!--If the user's currency is dollars.-->
-	<?php if ($fgmembersite->getCURR() == 0) { ?>
+	<?php if($fgmembersite->getCURR() == 0) { ?>
 	<body background="/assets/images/background.jpg">
         <img src="/assets/images/heunjeok.png" id="logo" alt="Heunjeok logo">
         <ul id="nav_container">

@@ -39,5 +39,16 @@
 			
 		if (!mysql_query($user_info, $connect)) { die('Error: ' . mysql_error()); }
 		mysql_close($connect);
+		
+		if($fgmembersite->getCURR() == 0)
+		{
+			$mt = $fgmembersite->getMonthlyTotal(1);
+			$monthWord = $fgmembersite->getMonthWord(1);
+			$formattedMT = number_format($mt, 2, '.', ',');
+			$dt = $fgmembersite->getDailyTotal();
+			$dayWord = $fgmembersite->getDayWord();
+			$formattedDT = number_format($dt, 2, '.', ',');
+			print "systemResult=$dayWord Total: $$formattedDT\n$monthWord Total: $$formattedMT";
+		}
 	}
 ?>

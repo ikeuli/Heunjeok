@@ -179,13 +179,12 @@ class FGMembersite
 		return array_reverse($unique);
 	}
 	
-    function getMonthlyTotal ($flag)
+	function getDailyTotal ()
 	{
-		$mt = 0;
-		if ($flag)
-			$month = $this->getMonth(1);
-		else
-			$month = $this->getMonth(0);
+		$dt = 0;
+		$day = $this->getDay();
+		$month = $this->getMonth(1);
+		$year = $this->getYear(1);
 	
 		if(!$this->DBLogin())
         {
@@ -193,7 +192,26 @@ class FGMembersite
             return "error";
         }      
 
-		$qry = "SELECT SUM(amount) FROM spending_data WHERE month=$month AND username='$_SESSION[username]'";
+		$qry = "SELECT SUM(amount) FROM spending_data WHERE day=$day AND month=$month AND year=$year AND username='$_SESSION[username]'";
+		$result = mysql_query($qry,$this->connection);
+		$dt = mysql_fetch_row($result);
+		
+		return (real) $dt[0];
+	}
+	
+    function getMonthlyTotal ($flag)
+	{
+		$mt = 0;
+		$month = $this->getMonth($flag);
+		$year = $this->getYear($flag);
+	
+		if(!$this->DBLogin())
+        {
+            $this->HandleError("Database login failed!");
+            return "error";
+        }      
+
+		$qry = "SELECT SUM(amount) FROM spending_data WHERE month=$month AND year=$year AND username='$_SESSION[username]'";
 		$result = mysql_query($qry,$this->connection);
 		$mt = mysql_fetch_row($result);
 		
@@ -209,7 +227,8 @@ class FGMembersite
         }      
 
 		$month = $this->getMonth($flag);
-		$qry = "SELECT day, category, amount FROM spending_data WHERE month=$month AND username='$_SESSION[username]' ORDER BY day";
+		$year = $this->getYear($flag);
+		$qry = "SELECT day, category, amount FROM spending_data WHERE month=$month AND year=$year AND username='$_SESSION[username]' ORDER BY day";
 		$result = mysql_query($qry,$this->connection);
 		
 		return $result;
@@ -236,6 +255,13 @@ class FGMembersite
 			return $_SESSION['month'];
 		else
 			return date(F);
+	}
+	
+	function getDayWord ()
+	{
+		date_default_timezone_set($this->getTZ());
+		
+		return date(l);
 	}
 	
 	function getDay ()
