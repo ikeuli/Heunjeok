@@ -50,5 +50,38 @@
 			$formattedDT = number_format($dt, 2, '.', ',');
 			print "systemResult=$dayWord Total: $$formattedDT\n$monthWord Total: $$formattedMT";
 		}
+		elseif($fgmembersite->getCURR() == 1)
+		{
+			$mt = $fgmembersite->getMonthlyTotal(1);
+			$monthWord = $fgmembersite->getMonthWord(1);
+			$formattedMT = number_format($mt, 0, '.', ',');
+			$dt = $fgmembersite->getDailyTotal();
+			$dayWord = $fgmembersite->getDayWord();
+			$formattedDT = number_format($dt, 0, '.', ',');
+			print "systemResult=$dayWord Total: $formattedDT won\n$monthWord Total: $formattedMT won";
+		}
+	}
+	elseif ($_POST['systemCall'] == "getStats") 
+	{
+		if($fgmembersite->getCURR() == 0)
+		{
+			$mt = $fgmembersite->getMonthlyTotal(1);
+			$monthWord = $fgmembersite->getMonthWord(1);
+			$formattedMT = number_format($mt, 2, '.', ',');
+			$dt = $fgmembersite->getDailyTotal();
+			$dayWord = $fgmembersite->getDayWord();
+			$formattedDT = number_format($dt, 2, '.', ',');
+			print "systemResult=$dayWord Total: $$formattedDT\n$monthWord Total: $$formattedMT";
+		}
+		elseif($fgmembersite->getCURR() == 1)
+		{
+			$mt = $fgmembersite->getMonthlyTotal(1);
+			$monthWord = $fgmembersite->getMonthWord(1);
+			$formattedMT = number_format($mt, 0, '.', ',');
+			$dt = $fgmembersite->getDailyTotal();
+			$dayWord = $fgmembersite->getDayWord();
+			$formattedDT = number_format($dt, 0, '.', ',');
+			print "systemResult=$dayWord Total: $formattedDT won\n$monthWord Total: $formattedMT won";
+		}
 	}
 ?>
