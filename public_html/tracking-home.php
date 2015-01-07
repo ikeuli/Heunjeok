@@ -58,6 +58,14 @@ if(!$fgmembersite->CheckLogin())
 					<span id='tracker_input_amount_spent_errorloc' class='error'></span>
 				</div>
 				<div class='container'>
+					<label for='memo'>(Optional) Memo:</label><br/>
+					<textarea ROWS=3 COLS=30 name='memo' id='memo' maxlength="1000" autocomplete="off"></textarea></br>
+					<span id='tracker_input_memo_errorloc' class='error'></span>
+				</div>
+				<div class='container'>
+					<label for='customDate' >(Optional) Date:</label><br/>
+				</div>
+				<div class='container'>
 					<input type='submit' name='Submit' value='Submit' />
 				</div>
 				</fieldset>
@@ -79,10 +87,9 @@ if(!$fgmembersite->CheckLogin())
 				frmvalidator.EnableMsgsTogether();
 
 				frmvalidator.addValidation("spending_category","req","Please provide a name for this payment.");
-    
 				frmvalidator.addValidation("amount_spent","req","Please provide the amount of money spent.");
-				
 				frmvalidator.addValidation("amount_spent","regexp=^[0-9]+(?:\.[0-9]{2}){0,1}$","Please provide a number amount.");
+				frmvalidator.addValidation("memo","maxlen","Memo is too long (Max 1000 characters).");
 
 				// ]]>
 			</script>
@@ -147,9 +154,7 @@ if(!$fgmembersite->CheckLogin())
 				frmvalidator.EnableMsgsTogether();
 
 				frmvalidator.addValidation("spending_category","req","Please provide a name for this payment.");
-    
 				frmvalidator.addValidation("amount_spent","req","Please provide the amount of money spent.");
-				
 				frmvalidator.addValidation("amount_spent","num","Please provide a number amount.");
 
 				// ]]>
