@@ -23,6 +23,7 @@ if(!$fgmembersite->CheckLogin())
 	  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 	  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 	  <script src="js/date.js"></script>
+	  <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon" /> 
 </head>
 
 	<!--If the user's currency is dollars.-->

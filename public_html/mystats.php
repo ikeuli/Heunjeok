@@ -23,6 +23,7 @@ if (!$fgmembersite->CheckLogin())
 	  <link rel="STYLESHEET" type="text/css" href="css/fg_membersite.css" />
 	  <script type='text/javascript' src='js/gen_validatorv31.js'></script>
       <link rel="STYLESHEET" type="text/css" href="css/style.css">
+	  <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon" /> 
 </head>
 
 	<!--If the user's currency is dollars.-->

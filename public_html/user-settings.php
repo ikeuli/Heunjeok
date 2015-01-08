@@ -19,6 +19,7 @@ if(!$fgmembersite->CheckLogin())
     <link rel="STYLESHEET" type="text/css" href="css/pwdwidget.css" />
     <script src="js/pwdwidget.js" type="text/javascript"></script>  
 	<link rel="stylesheet" type="text/css" href="/css/style.css" />
+	<link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon" /> 
 </head>
 <body background="/assets/images/background.jpg">
 	<img src="/assets/images/heunjeok.png" id="logo" alt="Heunjeok logo">

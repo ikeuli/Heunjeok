@@ -12,6 +12,7 @@ $fgmembersite->LogOut();
       <title>Login</title>
       <link rel="STYLESHEET" type="text/css" href="style/fg_membersite.css" />
       <script type='text/javascript' src='js/gen_validatorv31.js'></script>
+	  <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon" /> 
 </head>
 <body>
 
