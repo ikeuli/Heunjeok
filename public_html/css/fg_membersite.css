@@ -19,7 +19,7 @@ border-radius: 10px;
    font-family : Arial, sans-serif;
    font-size: 1.3em;
    font-weight:bold;
-   color:#333;
+   color:green;
 }
 
 #fg_membersite label
@@ -27,6 +27,7 @@ border-radius: 10px;
    font-family : Arial, sans-serif;
    font-size:0.8em;
    font-weight: bold;
+   color:#3399FF;
 }
 
 #fg_membersite input[type="text"],#fg_membersite textarea,

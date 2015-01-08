@@ -19,6 +19,10 @@ if(!$fgmembersite->CheckLogin())
 	  <link rel="STYLESHEET" type="text/css" href="css/fg_membersite.css" />
 	  <script type='text/javascript' src='js/gen_validatorv31.js'></script>
       <link rel="STYLESHEET" type="text/css" href="css/style.css">
+	  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+	  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	  <script src="js/date.js"></script>
 </head>
 
 	<!--If the user's currency is dollars.-->
@@ -63,7 +67,8 @@ if(!$fgmembersite->CheckLogin())
 					<span id='tracker_input_memo_errorloc' class='error'></span>
 				</div>
 				<div class='container'>
-					<label for='customDate' >(Optional) Date:</label><br/>
+					<label for='datepicker' >(Optional) Date:</label><br/>
+					<input type="text" id="datepicker" readonly="readonly" name="datepicker"/>
 				</div>
 				<div class='container'>
 					<input type='submit' name='Submit' value='Submit' />
@@ -96,7 +101,7 @@ if(!$fgmembersite->CheckLogin())
         </div>
     </body> <?php }
 	
-	//If the user's surrency is Korean Won.
+	//If the user's currency is Korean Won.
 	elseif ($fgmembersite->getCURR() == 1) { ?>
 	<body background="/assets/images/background.jpg">
         <img src="/assets/images/heunjeok.png" id="logo" alt="Heunjeok logo">
@@ -133,6 +138,15 @@ if(!$fgmembersite->CheckLogin())
 					<span id='tracker_input_amount_spent_errorloc' class='error'></span>
 				</div>
 				<div class='container'>
+					<label for='memo'>(Optional) Memo:</label><br/>
+					<textarea ROWS=3 COLS=30 name='memo' id='memo' maxlength="1000" autocomplete="off"></textarea></br>
+					<span id='tracker_input_memo_errorloc' class='error'></span>
+				</div>
+				<div class='container'>
+					<label for='datepicker' >(Optional) Date:</label><br/>
+					<input type="text" id="datepicker" readonly="readonly" name="datepicker"/>
+				</div>
+				<div class='container'>
 					<input type='submit' name='Submit' value='Submit' />
 				</div>
 				</fieldset>
@@ -156,6 +170,7 @@ if(!$fgmembersite->CheckLogin())
 				frmvalidator.addValidation("spending_category","req","Please provide a name for this payment.");
 				frmvalidator.addValidation("amount_spent","req","Please provide the amount of money spent.");
 				frmvalidator.addValidation("amount_spent","num","Please provide a number amount.");
+				frmvalidator.addValidation("memo","maxlen","Memo is too long (Max 1000 characters).");
 
 				// ]]>
 			</script>

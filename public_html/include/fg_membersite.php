@@ -228,7 +228,7 @@ class FGMembersite
 
 		$month = $this->getMonth($flag);
 		$year = $this->getYear($flag);
-		$qry = "SELECT day, category, amount FROM spending_data WHERE month=$month AND year=$year AND username='$_SESSION[username]' ORDER BY day";
+		$qry = "SELECT day, category, amount FROM spending_data WHERE month=$month AND year=$year AND username='$_SESSION[username]' ORDER BY day DESC";
 		$result = mysql_query($qry,$this->connection);
 		
 		return $result;
