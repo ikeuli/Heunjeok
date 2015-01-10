@@ -19,9 +19,9 @@ if(!$fgmembersite->CheckLogin())
 	  <link rel="STYLESHEET" type="text/css" href="css/fg_membersite.css" />
 	  <script type='text/javascript' src='js/gen_validatorv31.js'></script>
       <link rel="STYLESHEET" type="text/css" href="css/style.css">
-	  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-	  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-	  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	  <link rel="stylesheet" href="css/jquery-ui.css" />
+	  <script src="js/jquery-1.9.1.js"></script>
+	  <script src="js/jquery-ui.js"></script>
 	  <script src="js/date.js"></script>
 	  <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon" /> 
 </head>
