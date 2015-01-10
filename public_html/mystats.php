@@ -104,7 +104,7 @@ if (!$fgmembersite->CheckLogin())
 					<tr>
 						<td><?php echo $row['day'];?></td>
 						<?php if($row['memo'] != NULL) : ?>
-							<td><?php echo $row['category'];?><span class="question" title=<?php echo $row['memo'];?>>?</span></td>
+							<td><?php echo $row['category'];?><span class="question" id="<?php echo $row['memo'];?>">?</span></td>
 						<?php else : ?>
 							<td><?php echo $row['category'];?></td>
 						<?php endif; ?>
@@ -117,7 +117,7 @@ if (!$fgmembersite->CheckLogin())
 						<tr>
 							<td><?php echo "";?></td>
 							<?php if($row['memo'] != NULL) : ?>
-								<td><?php echo $row['category'];?><span class="question" title=<?php echo $row['memo'];?>>?</span></td>
+								<td><?php echo $row['category'];?><span class="question" id="<?php echo $row['memo'];?>">?</span></td>
 							<?php else : ?>
 								<td><?php echo $row['category'];?></td>
 							<?php endif; ?>
@@ -137,7 +137,7 @@ if (!$fgmembersite->CheckLogin())
 							<tr>
 								<td><?php echo $row['day'];?></td>
 								<?php if($row['memo'] != NULL) : ?>
-									<td><?php echo $row['category'];?><span class="question" title=<?php echo $row['memo'];?>>?</span></td>
+									<td><?php echo $row['category'];?><span class="question" id="<?php echo $row['memo'];?>">?</span></td>
 								<?php else : ?>
 									<td><?php echo $row['category'];?></td>
 								<?php endif; ?>

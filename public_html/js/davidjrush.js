@@ -2,7 +2,8 @@
 
 $(document).ready(function () {
 	$("span.question").hover(function () {
-		$(this).append('<div class="tooltip"><p>' + $(this).attr('title') + '</p></div>');
+		var tooltipText = $(this).attr('id');
+		$(this).append('<div class="tooltip"><p>' + tooltipText + '</p></div>');
 	}, function () {
 		$("div.tooltip").remove();
 	});
