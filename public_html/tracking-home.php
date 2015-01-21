@@ -37,11 +37,11 @@ if(!$fgmembersite->CheckLogin())
 			<li>
                 <a href='mystats.php'>My Stats</a>
             </li>
-            <li>
-                <a href='logout.php'>Logout</a>
+			<li>
+                <a href='appDemo.php'>iOS App Demo</a> 
             </li>
             <li>
-                <a href="contact.html">Contact</a> 
+                <a href='logout.php'>Logout</a>
             </li>
         </ul>
         <div id="main_content" align="center">
