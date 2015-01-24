@@ -39,8 +39,8 @@ if (!$fgmembersite->CheckLogin())
 		$totalText = "Total: ₩";
 	endif ?>
 	
-	<body background="/assets/images/background.jpg">
-        <img src="/assets/images/heunjeok.png" id="logo" alt="Heunjeok logo">
+	<body background="assets/images/background.jpg">
+        <img src="assets/images/heunjeok.png" id="logo" alt="Heunjeok logo">
         <ul id="nav_container">
             <li>
                 <div id="logged_in_as">Logged in as: <?= $fgmembersite->UserFullName(); ?></div> 
@@ -149,7 +149,7 @@ if (!$fgmembersite->CheckLogin())
 				<td></td><td></td>
 				<td class="total"><?php echo $totalText; echo number_format($total, $decimalNum, '.', ',') . "\n"; ?></td>
 			</table>
-			<img src="/assets/images/dollarswon.png" alt="Dollar and won sign">
+			<img src="assets/images/dollarswon.png" alt="Dollar and won sign">
 		</div>
     </body>
 </html>

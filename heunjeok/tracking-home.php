@@ -28,8 +28,8 @@ if(!$fgmembersite->CheckLogin())
 
 	<!--If the user's currency is dollars.-->
 	<?php if($fgmembersite->getCURR() == 0) { ?>
-	<body background="/assets/images/background.jpg">
-        <img src="/assets/images/heunjeok.png" id="logo" alt="Heunjeok logo">
+	<body background="assets/images/background.jpg">
+        <img src="assets/images/heunjeok.png" id="logo" alt="Heunjeok logo">
         <ul id="nav_container">
             <li>
                 <div id="logged_in_as">Logged in as: <?= $fgmembersite->UserFullName(); ?></div> 
@@ -84,7 +84,7 @@ if(!$fgmembersite->CheckLogin())
 				$month = $fgmembersite->getMonthWord(1);
 			?>	
 			<p class="monthly_total"><?php echo $month ?> Total: $<?php echo number_format($mt, 2, '.', ',') . "\n"; ?></p>
-            <img src="/assets/images/dollarswon.png" alt="Dollar and won sign">
+            <img src="assets/images/dollarswon.png" alt="Dollar and won sign">
 			<script type='text/javascript'>
 				// <![CDATA[
 
@@ -160,7 +160,7 @@ if(!$fgmembersite->CheckLogin())
 				$month = $fgmembersite->getMonthWord(1);
 			?>	
 			<p class="monthly_total"><?php echo $month ?> Total: ₩<?php echo number_format($mt, 0, '.', ',') . "\n"; ?></p>
-            <img src="/assets/images/dollarswon.png" alt="Dollar and won sign">
+            <img src="assets/images/dollarswon.png" alt="Dollar and won sign">
 			<script type='text/javascript'>
 				// <![CDATA[
 

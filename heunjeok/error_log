@@ -145,3 +145,4 @@
 [09-Jan-2015 18:26:48 America/New_York] PHP Parse error:  syntax error, unexpected T_ELSE in /home/heuncxep/public_html/mystats.php on line 117
 [09-Jan-2015 18:26:57 America/New_York] PHP Parse error:  syntax error, unexpected '}' in /home/heuncxep/public_html/mystats.php on line 117
 [09-Jan-2015 18:27:29 America/New_York] PHP Parse error:  syntax error, unexpected T_ELSE in /home/heuncxep/public_html/mystats.php on line 112
+[21-Jan-2015 17:43:29 America/New_York] PHP Fatal error:  Call to a member function UserFullName() on a non-object in /home/heuncxep/public_html/appDemo.php on line 14
